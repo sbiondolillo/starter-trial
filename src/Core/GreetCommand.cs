@@ -23,8 +23,7 @@ public static class GreetCommand
         root.Options.Add(shout);
         root.SetAction(result =>
         {
-            string greeting = Greeter.Greet(result.GetRequiredValue(name));
-            result.InvocationConfiguration.Output.WriteLine(result.GetValue(shout) ? greeting.ToUpperInvariant() : greeting);
+            result.InvocationConfiguration.Output.WriteLine(Greeter.Greet(result.GetRequiredValue(name), result.GetValue(shout)));
             return 0;
         });
         return root;
