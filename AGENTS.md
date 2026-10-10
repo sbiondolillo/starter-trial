@@ -10,7 +10,7 @@ The rules for an agent that reads, writes or reviews code in this repo.
 | `tests/Specs/` | the build suite: Reqnroll step classes under `Steps/`, and xUnit unit tests under `Unit/` | each test answers every call to a service from a stub. A unit test class name ends `Tests` |
 | `tests/Integration/` | the integration suite: xUnit tests against the real services that the program calls | `dotnet run --no-restore --project tests/Integration` runs it, and `dotnet test` leaves it out |
 | `src/Core/` | the library, where the behaviour lives, and the `System.CommandLine` command tree | the tree holds every command, option, argument and action. A new option or argument is a symbol in the tree, and `--help` lists it |
-| `src/App/` | the console program, a thin shell over the library | `Program.cs` builds the Generic Host, `Microsoft.Extensions.Hosting`, and parses its arguments with the command tree from `src/Core` |
+| `src/App/` | the console program, a thin shell over the library | `Program.cs` parses its arguments with the command tree from `src/Core` |
 
 ## How a scenario reaches the code
 
